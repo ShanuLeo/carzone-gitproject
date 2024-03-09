@@ -4,14 +4,18 @@ from .models import Team
 # Create your views here.
 
 def home(request):
-    teams = Team.objects.all()
+    team = Team.objects.all()
     data = {
-        'teams' : teams,
+        'teams' : team,
     }
     return render(request, 'pages/home.html', data)
 
 def about(request):
-    return render(request, 'pages/about.html')
+    team = Team.objects.all()
+    data = {
+        'teams' : team,
+    }
+    return render(request, 'pages/about.html', data)
 
 def services(request):
     return render(request, 'pages/services.html')
